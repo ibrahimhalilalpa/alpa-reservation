@@ -1,0 +1,102 @@
+.appointment-scheduler {
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111827;
+  max-width: 600px;
+}
+
+.appointment-scheduler h2 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 0.3rem;
+}
+
+.days-container,
+.slots-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.days-container button,
+.slots-container button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.days-container button {
+  background-color: #e0e7ff;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.days-container button.selected {
+  background-color: #2563eb;
+  color: white;
+}
+
+.slots-container button {
+  background-color: #f3f4f6;
+  color: #374151;
+  cursor: pointer;
+}
+
+.slots-container button.selected {
+  background-color: #2563eb;
+  color: white;
+}
+
+.slots-container button.booked {
+  background-color: #9ca3af;
+  color: white;
+  cursor: not-allowed;
+}
+
+.appointment-form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.appointment-form input,
+.appointment-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+.appointment-form button {
+  width: max-content;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+  background-color: #1e40af;
+}
