@@ -1,19 +1,28 @@
 import React, { useState } from "react";
-import { auth } from "../firebaseConfig";
+import { auth, db } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import "../styles/login.css";
+import { doc, getDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import '../styles/login.css';
 
-
-export default function Login({ onLogin }) {
+export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         setError("");
         try {
-            await signInWithEmailAndPassword(auth, email, password);
-            if (onLogin) onLogin();
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const userId = userCredential.user.uid;
+
+            const userDoc = await getDoc(doc(db, "users", userId));
+            const userData = userDoc.data();
+
+            if (userData.role === "admin") navigate("/admin");
+            else if (userData.role === "business") navigate("/dashboard");
+            else navigate("/profile");
         } catch (e) {
             setError(e.message);
         }
@@ -23,19 +32,19 @@ export default function Login({ onLogin }) {
         <div className="login-container">
             <h2>Giriş Yap</h2>
             <input
-                type="email"
-                placeholder="Email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                placeholder="Email"
+                type="email"
             />
             <input
-                type="password"
-                placeholder="Şifre"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                placeholder="Şifre"
+                type="password"
             />
             <button onClick={handleLogin}>Giriş Yap</button>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error && <p>{error}</p>}
         </div>
     );
 }
