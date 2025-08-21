@@ -42,7 +42,7 @@ Kurulum için:
 git clone https://github.com/ibrahimhalilalpa/alpa-reservation.git
 cd alpa-reservation
 npm install
-npm start
+npm run dev
 ```
 
 ## ✅ Yapılanlar
