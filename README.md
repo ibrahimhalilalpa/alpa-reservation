@@ -39,7 +39,7 @@ Kullanıcıların şehir, ilçe ve sektör bazlı filtrelerle işletme bulup ran
 Kurulum için:
 
 ```bash
-git clone <repo-link>
+git clone https://github.com/ibrahimhalilalpa/alpa-reservation.git
 cd alpa-reservation
 npm install
 npm start
