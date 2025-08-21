@@ -66,9 +66,9 @@ npm run dev
 
 ## 🔜 Yapılacaklar (TODO)
 
-- [ ] Kullanıcı rolleri: **admin, işletme sahibi, normal kullanıcı** olarak ayrılacak
+- [x] Kullanıcı rolleri: **admin, işletme sahibi, normal kullanıcı** olarak ayrılacak
     
-- [ ] Admin paneli ile işletme ve kullanıcı yönetimi yapılabilecek
+- [x] Admin paneli ile işletme ve kullanıcı yönetimi yapılabilecek
     
 - [ ] İşletme sahipleri için randevu yönetim paneli eklenecek
     
@@ -78,4 +78,4 @@ npm run dev
     
 - [ ]  Gelişmiş arama ve filtreleme (ör. çalışma saatine göre) yapılacak
     
-- [ ]  Mobil uyumluluk ve responsive tasarım iyileştirmeleri yapılacak
+- [x]  Mobil uyumluluk ve responsive tasarım iyileştirmeleri yapılacak
